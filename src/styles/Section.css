@@ -25,4 +25,16 @@ section > .fields {
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   justify-items: stretch;
   padding: 1em;
+  gap: 15px;
+}
+section > header > button {
+  background-color: unset;
+  border: none;
+  cursor: pointer;
+}
+
+section > header > button > svg {
+  vertical-align: text-bottom;
+  width: 1.5em;
+  height: 1.5em;
 }
