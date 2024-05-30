@@ -1,0 +1,28 @@
+section > button {
+  font-family: inherit;
+  font-size: inherit;
+}
+
+section > header > h2 {
+  margin: 0;
+  padding: 0;
+}
+
+section > header {
+  padding-left: 1em;
+  border-bottom: 1px solid black;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+section {
+  margin: 1em;
+  border: 1px solid black;
+}
+
+section > .fields {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  justify-items: stretch;
+  padding: 1em;
+}

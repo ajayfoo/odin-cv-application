@@ -1,0 +1,15 @@
+.info > input.display {
+  border: 1px solid transparent;
+  pointer-events: none;
+}
+.info {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: stretch;
+}
+.info > input {
+  border: 1px solid black;
+  font-family: inherit;
+  font-size: inherit;
+}
