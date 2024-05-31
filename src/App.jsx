@@ -2,11 +2,13 @@ import "./App.css";
 import Section from "./components/Section";
 import { useState } from "react";
 import Info from "./components/Info";
+import InfoLink from "./components/InfoLink";
 import { currentDate } from "./utils/date";
 
 function App() {
   const [bioEditMode, setBioEditMode] = useState(false);
   const [eduEditMode, setEduEditMode] = useState(false);
+  const [projectsEditMode, setProjectsEditMode] = useState(false);
   return (
     <div>
       <Section
@@ -37,6 +39,22 @@ function App() {
           name="Date"
           value={currentDate()}
           type="date"
+          editMode={eduEditMode}
+        />
+      </Section>
+      <Section
+        name="Relevant Project"
+        toggleEditMode={() => setProjectsEditMode(!projectsEditMode)}
+      >
+        <Info name="Name" value={"Battle Ship"} editMode={eduEditMode} />
+        <Info
+          name="Tech Stack"
+          value={"HTML, CSS and JavaScript"}
+          editMode={eduEditMode}
+        />
+        <InfoLink
+          name="Repo"
+          initialUrl={"https://github.com/ajaypep/top-battleship"}
           editMode={eduEditMode}
         />
       </Section>

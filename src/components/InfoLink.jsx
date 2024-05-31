@@ -1,10 +1,8 @@
 import { useState } from "react";
 import "../styles/Info.css";
-import { shortDate } from "../utils/date";
 
-export default function Info({ editMode, name, type, value }) {
-  const [inputValue, setInputValue] = useState(value);
-  const formattedValue = type === "date" ? shortDate(inputValue) : inputValue;
+export default function InfoLink({ editMode, name, initialUrl }) {
+  const [inputValue, setInputValue] = useState(initialUrl);
   let field = null;
   if (editMode) {
     field = (
@@ -12,7 +10,6 @@ export default function Info({ editMode, name, type, value }) {
         <label htmlFor={"info-" + name}>{name}</label>
         <input
           tabIndex={editMode ? 0 : -1}
-          type={type}
           id={"info-" + name}
           className={editMode ? "" : "display"}
           value={inputValue}
@@ -24,9 +21,11 @@ export default function Info({ editMode, name, type, value }) {
     field = (
       <>
         <p>{name}</p>
-        <p className="value">{formattedValue}</p>
+        <a className="value" href={inputValue}>
+          Link
+        </a>
       </>
     );
   }
-  return <div className="info">{field}</div>;
+  return <div className="info link">{field}</div>;
 }
