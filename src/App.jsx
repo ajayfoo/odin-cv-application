@@ -46,16 +46,16 @@ function App() {
         name="Relevant Project"
         toggleEditMode={() => setProjectsEditMode(!projectsEditMode)}
       >
-        <Info name="Name" value={"Battle Ship"} editMode={eduEditMode} />
+        <Info name="Name" value={"Battle Ship"} editMode={projectsEditMode} />
         <Info
           name="Tech Stack"
           value={"HTML, CSS and JavaScript"}
-          editMode={eduEditMode}
+          editMode={projectsEditMode}
         />
         <InfoLink
           name="Repo"
           initialUrl={"https://github.com/ajaypep/top-battleship"}
-          editMode={eduEditMode}
+          editMode={projectsEditMode}
         />
       </Section>
     </div>
