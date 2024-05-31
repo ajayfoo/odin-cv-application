@@ -1,14 +1,11 @@
-import { useState } from "react";
-import Info from "./Info";
 import "../styles/Section.css";
 
-export default function Section({ name }) {
-  const [isEditMode, setIsEditMode] = useState(false);
+export default function Section({ name, toggleEditMode, children }) {
   return (
     <section>
       <header>
         <h2>{name}</h2>
-        <button onClick={() => setIsEditMode(!isEditMode)}>
+        <button onClick={toggleEditMode}>
           <svg
             alt="pencil"
             xmlns="http://www.w3.org/2000/svg"
@@ -21,11 +18,7 @@ export default function Section({ name }) {
           </svg>
         </button>
       </header>
-      <div className="fields">
-        <Info name="Name" editMode={isEditMode} />
-        <Info name="Email ID" type="email" editMode={isEditMode} />
-        <Info name="Phone No." type="tel" editMode={isEditMode} />
-      </div>
+      <div className="fields">{children}</div>
     </section>
   );
 }
